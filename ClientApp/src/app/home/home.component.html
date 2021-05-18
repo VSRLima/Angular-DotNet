@@ -1,31 +1,18 @@
 <div>
-  <form [formGroup]="form">
-    <div class="title">
-      <label for="title" >Título</label>
-      <input type="text" id="title" formControlName="title"/>
-    </div>
-    <!-- <div class="date">
-      <label for="date">Data</label>
-      <input type="date" id="date" formControlName="date"/>
-    </div> -->
-    <div class="description">
-      <label for="description">Descrição</label>
-      <textarea id="description" formControlName="description"></textarea>
-    </div>
-  </form>
-  <button type="button" (click)="onSubmit()">
-    Send message
-  </button>
-</div>
-<div>
-  Tasks
+  <h1>Task</h1>
+  <button type="button" class="btn btn-primary"(click)="openModal()">Novo +</button>
 </div>
 <div class="card" *ngFor="let task of tasks">
   <ul class="list-group list-group-flush" >
     <div  class="card-header">
-      {{task.title}}
+      <h5>{{task.title}}</h5>
     </div>
-    <li class="list-group-item">{{task.description}}</li>
+    <li class="list-group-item">
+      <h6>Descrição:</h6>
+      <p>{{task.description}}</p>
+      <button type="button" class="btn btn-success" (click)="onEdit(task)">Editar</button>
+      <button type="button" class="btn btn-danger" (click)="onDelete(task.id)">Deletar</button>
+    </li>
   </ul>
 </div>
 

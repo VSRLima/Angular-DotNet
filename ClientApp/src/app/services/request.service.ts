@@ -43,4 +43,8 @@ export class RequestService {
   deleteTask(id) {
     return this.http.delete(`${this.API}/${id}`).pipe(take(1));
   }
+
+  passandoInfo(id: number) {
+    return id;
+  }
 }

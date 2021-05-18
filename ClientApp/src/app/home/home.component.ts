@@ -2,18 +2,23 @@ import { Task } from './../shared/model/Task';
 import { Component, OnInit } from '@angular/core';
 import { RequestService } from '../services/request.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   tasks: Task[] = [];
-  form: FormGroup
+  form: FormGroup;
+  bsModalRef: BsModalRef
 
   constructor(
     private request: RequestService,
     private formBuilder: FormBuilder,
+    private bsModalService: BsModalService,
   ) {}
 
   ngOnInit(): void {
@@ -37,26 +42,25 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.request.save(this.form.value).subscribe(
+  onDelete(id) {
+    this.request.deleteTask(id).subscribe(
       (success) => {
-        //something may happen (alertservice)
+        window.location.reload()
       },
       (error) => {
-        //something may happen too (alertservice)
+
       }
     )
   }
 
-  onDelete(id) {
-    this.request.deleteTask(id).subscribe(
-      (success) => {
+  openModal() {
+    this.bsModalRef = this.bsModalService.show(ModalComponent);
+    this.bsModalRef.content.teste
+  }
 
-      },
-      (error) => {
-
-      }
-    )
+  onEdit(task: Task) {
+   console.log(this.bsModalRef.content.teste = task.id)
+    this.openModal();
   }
 
 }
