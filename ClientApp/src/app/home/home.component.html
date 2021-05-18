@@ -1,0 +1,31 @@
+<div>
+  <form [formGroup]="form">
+    <div class="title">
+      <label for="title" >Título</label>
+      <input type="text" id="title" formControlName="title"/>
+    </div>
+    <!-- <div class="date">
+      <label for="date">Data</label>
+      <input type="date" id="date" formControlName="date"/>
+    </div> -->
+    <div class="description">
+      <label for="description">Descrição</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+  </form>
+  <button type="button" (click)="onSubmit()">
+    Send message
+  </button>
+</div>
+<div>
+  Tasks
+</div>
+<div class="card" *ngFor="let task of tasks">
+  <ul class="list-group list-group-flush" >
+    <div  class="card-header">
+      {{task.title}}
+    </div>
+    <li class="list-group-item">{{task.description}}</li>
+  </ul>
+</div>
+
