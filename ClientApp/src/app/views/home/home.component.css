@@ -1,0 +1,35 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 50rem;
+  margin: auto;
+  padding-bottom: 1rem;
+  border-bottom: 4px solid greenyellow;
+  border-radius: 20px;
+}
+
+.card {
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 40rem;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.card-text {
+  display: block;
+  margin-top: 0;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-body button {
+  margin-right: 1rem;
+}

@@ -1,0 +1,45 @@
+<div class="modal-header"></div>
+<div class="modal-body">
+  <form [formGroup]="form">
+    <div class="mb-3">
+      <label for="title" class="col-form-label">Título</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control"
+        formControlName="title"
+        [(ngModel)]="title"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="col-form-label">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        formControlName="description"
+        [(ngModel)]="description"
+      ></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="date" class="col-form-label">Data</label>
+      <input
+        type="date"
+        id="date"
+        class="form-control"
+        formControlName="date"
+        [(ngModel)]="date"
+      >
+    </div>
+  </form>
+  <button type="button" class="btn btn-secondary" (click)="onSubmit()">
+    Salvar
+  </button>
+  <button
+    type="button"
+    class="close pull-right"
+    aria-label="Close"
+    (click)="modalRef.hide()"
+  >
+    Fechar
+  </button>
+</div>

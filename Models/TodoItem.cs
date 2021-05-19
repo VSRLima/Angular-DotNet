@@ -1,6 +1,6 @@
-﻿
+﻿using System;
 
-namespace ProjectAngDotNet.Models
+namespace ProjectAngDotNet
 {
     public class TodoItem
     {
@@ -10,6 +10,9 @@ namespace ProjectAngDotNet.Models
 
         public string Description { get; set; }
 
-        
+        public bool isCompleted { get; set; }
+
+        public DateTime Date { get; set; }
+       
     }
 }

@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">ProjectAngDotNet</a>
+      <a class="navbar-brand" >To Do List</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -22,18 +22,17 @@
         <ul class="navbar-nav flex-grow">
           <li
             class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
+
           >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+            <a class="nav-link text-dark" >Home</a>
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
+          <li class="nav-item" >
+            <a class="nav-link text-dark"
               >Counter</a
             >
           </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
+          <li class="nav-item" >
+            <a class="nav-link text-dark"
               >Fetch data</a
             >
           </li>

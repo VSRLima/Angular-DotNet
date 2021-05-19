@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Task } from '../shared/model/Task';
 import { take } from 'rxjs/operators';
+import { Task } from '../model/Task';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +28,7 @@ export class RequestService {
   }
 
   private updateTask(task: Task) {
-    return this.http.post(`${this.API}, ${task}`, task).pipe(take(1));
+    return this.http.put(`${this.API}${task.id}`, task).pipe(take(1));
   }
 
   save(task: Task) {
@@ -41,10 +41,10 @@ export class RequestService {
   }
 
   deleteTask(id) {
-    return this.http.delete(`${this.API}/${id}`).pipe(take(1));
+    return this.http.delete(`${this.API}${id}`).pipe(take(1));
   }
 
-  passandoInfo(id: number) {
-    return id;
+  saveStatus(task: Task) {
+    return this.http.put(`${this.API}${task.id}`, task).pipe(take(1));
   }
 }
