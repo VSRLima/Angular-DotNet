@@ -5,6 +5,7 @@ import { AlertModalService } from 'src/app/shared/services/alert-modal.service';
 import { ModalEditService } from 'src/app/shared/services/modal-edit.service';
 import * as moment from "../../../../node_modules/moment";
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,11 +15,12 @@ export class HomeComponent implements OnInit {
   tasks: Task[] = [];
   taskToMark: Task[] = [];
   dateTime = new Date();
+  renderCal: boolean = false;
 
   constructor(
     private request: RequestService,
     private alertService: AlertModalService,
-    private modalService: ModalEditService
+    private modalService: ModalEditService,
   ) {}
 
   ngOnInit(): void {
@@ -48,7 +50,7 @@ export class HomeComponent implements OnInit {
   onDelete(id) {
     this.request.deleteTask(id).subscribe(
       (success) => {
-        this.alertService.showAlert("Task excluída com sucesso", "danger")
+        this.alertService.showAlert("Task excluída com sucesso", "success")
         window.location.reload()
       },
       (error) => {
@@ -69,7 +71,7 @@ export class HomeComponent implements OnInit {
     statusData.isCompleted = !statusData.isCompleted;
     this.request.saveStatus(statusData).subscribe(
       (sucess) => {
-        this.alertService.showAlert("Task completada", "sucess");
+        this.alertService.showAlert("Task completada", "success");
         window.location.reload()
       },
       (error) => {
@@ -83,4 +85,7 @@ export class HomeComponent implements OnInit {
     this.getTasks();
   }
 
+  renderCalendar(): void {
+    this.renderCal = !this.renderCal;
+  }
 }

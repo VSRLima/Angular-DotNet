@@ -7,7 +7,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './views/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ViewsModule } from './views/views.module';
-import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
     ReactiveFormsModule,
     FormsModule,
     ViewsModule,
-    CalendarModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' }
     ])

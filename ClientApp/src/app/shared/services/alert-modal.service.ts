@@ -18,8 +18,4 @@ export class AlertModalService {
       setTimeout(() => bsModalRef.hide(), dismissTimeout);
     }
   }
-
-  showConfirm(title: string, content: string, okTxt?: string, cancelTxt?: string) {
-    //create a confirm component
-  }
 }

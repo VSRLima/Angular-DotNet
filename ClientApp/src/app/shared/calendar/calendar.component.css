@@ -1,6 +1,7 @@
 #control_wrapper {
-  margin: 0 auto;
-  max-width: 300px;
+  position: absolute;
+  z-index: 1;
+  top: 12.5rem
 }
 
 .control-section {

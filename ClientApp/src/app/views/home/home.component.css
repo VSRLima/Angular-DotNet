@@ -8,6 +8,25 @@ header {
   border-radius: 20px;
 }
 
+.date-div {
+  width: 50rem;
+  margin: auto;
+}
+
+.date-button {
+  margin-top: 1rem;
+  border: none;
+  background-color: white;
+  font-weight: 400;
+  font-size: large;
+  transition: font-size 1s, color 1s;
+}
+
+.date-button:hover {
+  color:rgb(104, 102, 102);
+  font-size: larger;
+}
+
 .card {
   margin: auto;
   margin-top: 1rem;
@@ -32,4 +51,8 @@ header {
 
 .card-body button {
   margin-right: 1rem;
+}
+
+.card-footer {
+  text-align: center;
 }

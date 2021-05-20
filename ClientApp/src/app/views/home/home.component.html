@@ -1,25 +1,46 @@
 <header>
   <h1>Task</h1>
-  <h3>{{dateTime | date:"dd/MM/yy"}}</h3>
-  <button type="button" class="btn btn-success" (click)="openModal()">Novo +</button>
+  <button type="button" class="btn btn-success" (click)="openModal()">
+    Novo +
+  </button>
 </header>
-<app-calendar (dateEvent)="dateFromCalendar($event)" [tasks]="taskToMark"></app-calendar>
+<div class="date-div">
+  <button (click)="renderCalendar()" class="date-button">{{ dateTime | date: "dd/MM/yy" }}</button>
+  <div *ngIf="renderCal">
+    <app-calendar
+      (dateEvent)="dateFromCalendar($event)"
+      [tasks]="taskToMark"
+    ></app-calendar>
+  </div>
+</div>
+
 <div class="card" *ngFor="let task of tasks">
   <div class="card-header">
-    <h5>{{task.title}}</h5>
+    <h5>{{ task.title }}</h5>
     <div>
-      <input type="checkbox" id="status" class="form-check-input" (click)="statusTask(task)" [(ngModel)]="task.isCompleted">
-      <label for="status" class="form-check-label ">{{task.isCompleted == true ? 'Feito' : 'Não Feito'}}</label>
+      <input
+        type="checkbox"
+        id="status"
+        class="form-check-input"
+        (click)="statusTask(task)"
+        [(ngModel)]="task.isCompleted"
+      />
+      <label for="status" class="form-check-label">{{
+        task.isCompleted == true ? "Feito" : "Não Feito"
+      }}</label>
     </div>
   </div>
   <div class="card-body">
     <h6 class="card-title">Descrição:</h6>
-    <p class="card-text">{{task.description}}</p>
-    <button type="button" class="btn btn-warning" (click)="onEdit(task)">Editar</button>
-    <button type="button" class="btn btn-danger" (click)="onDelete(task.id)">Deletar</button>
+    <p class="card-text">{{ task.description }}</p>
+    <button type="button" class="btn btn-warning" (click)="onEdit(task)">
+      Editar
+    </button>
+    <button type="button" class="btn btn-danger" (click)="onDelete(task.id)">
+      Deletar
+    </button>
   </div>
   <div class="card-footer text-muted">
-      {{task.date | date:'dd/MM/yy'}}
+    {{ task.date | date: "dd/MM/yy" }}
   </div>
 </div>
-

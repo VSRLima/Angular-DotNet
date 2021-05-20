@@ -47,7 +47,7 @@ export class ModalComponent implements OnInit{
     if(this.id === undefined) {
       this.requestService.save(this.form.value).subscribe(
         (success) => {
-          this.alertService.showAlert("Task criada com sucesso", "succcess ")
+          this.alertService.showAlert("Task criada com sucesso", "success ")
           window.location.reload()
         },
         (error) => {
@@ -64,7 +64,7 @@ export class ModalComponent implements OnInit{
       }
       this.requestService.save(taskObj).subscribe(
         (success) => {
-          this.alertService.showAlert("Task criada com sucesso", "succcess ")
+          this.alertService.showAlert("Task criada com sucesso", "success ")
           window.location.reload()
         },
         (error) => {
