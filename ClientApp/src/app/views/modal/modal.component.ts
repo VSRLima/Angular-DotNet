@@ -15,7 +15,6 @@ import { RequestService } from 'src/app/shared/services/request.service';
 })
 export class ModalComponent implements OnInit{
   form: FormGroup;
-  modalRef: BsModalRef;
   @Input() title: string;
   @Input() description: string;
   @Input() date: Date;
